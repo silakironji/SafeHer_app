@@ -1,4 +1,4 @@
-# shesafe
+# SafeHer
 
 A new Flutter project.
 
