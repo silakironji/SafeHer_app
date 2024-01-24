@@ -89,16 +89,15 @@ class _SheSafeHomePageState extends State<SheSafeHomePage> {
         unselectedItemColor: Colors.grey,
         currentIndex: 2,
         onTap: (index) {
-          // Handle navigation to different pages based on index
-          // You can use Navigator to push new screens or change the body of this widget
-        },
-      ),
+          if (index == 4) { // If the fourth item (index 4) is tapped
+    Navigator.of(context).pushNamed("/userprofile");
+          
+
+        }},
+  ),
     );
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: SheSafeHomePage(),
-  ));
-}
+
+
