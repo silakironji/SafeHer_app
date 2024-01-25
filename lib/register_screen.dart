@@ -100,7 +100,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 70),
                 child: ElevatedButton(
                 onPressed: () {
-                  // Your button press code here
+                  Navigator.of(context).pushNamed("/home");
                 },
                 child: const Text('Register', style: TextStyle(fontSize: 20, ),),
                 style: ElevatedButton.styleFrom(

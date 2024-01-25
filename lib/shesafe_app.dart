@@ -11,6 +11,7 @@ import 'package:shesafe/sos_count.dart';
 import 'package:shesafe/sos_screen.dart';
 import 'package:shesafe/splashscreen.dart';
 import 'package:shesafe/user_profile.dart';
+import 'package:shesafe/your_circle.dart';
 
 class SheSafeApp extends StatelessWidget {
   const SheSafeApp({super.key});
@@ -38,8 +39,8 @@ class SheSafeApp extends StatelessWidget {
         "/create2circle":(context) =>const Create2CircleScreen(),
         "/soscount":(context) =>const SosCountScreen(),
         "/invitescreen":(context) =>const InviteScreen(),
-
-
+        "/yourcircle":(context) =>const YourCircleScreen(),
+        
       }
     );
     

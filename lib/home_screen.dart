@@ -2,6 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 
+
+
+class BottomSheetWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16),
+      child: const Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            'Sly Has Just shared her current location...',
+            style: TextStyle(color: Colors.pink, fontSize: 18),
+          ),
+          SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              CircleAvatar(
+                backgroundImage: AssetImage('assets/images/cute.jpg'), 
+                radius: 30,
+              ),
+              CircleAvatar(
+                backgroundImage: AssetImage('assets/images/cute.jpg'), 
+                radius: 30,
+              ),
+              CircleAvatar(
+                backgroundImage: AssetImage('assets/images/cute.jpg'), 
+                radius: 30,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
 class SheSafeHomePage extends StatefulWidget {
   @override
   _SheSafeHomePageState createState() => _SheSafeHomePageState();
@@ -16,6 +56,7 @@ class _SheSafeHomePageState extends State<SheSafeHomePage> {
     super.initState();
     _getCurrentLocation();
   }
+
 
   Future<void> _getCurrentLocation() async {
     try {
@@ -56,8 +97,10 @@ class _SheSafeHomePageState extends State<SheSafeHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Implement the logic for sharing live location
-          // You can use the _currentLocation variable to get the current location
+         showModalBottomSheet(
+            context: context,
+            builder: (context) => BottomSheetWidget(),
+          );
         },
         backgroundColor: Colors.pink,
         child: Icon(Icons.share, color: Colors.white),
@@ -85,15 +128,21 @@ class _SheSafeHomePageState extends State<SheSafeHomePage> {
             label: 'Profile',
           ),
         ],
-        selectedItemColor: Colors.pink,
-        unselectedItemColor: Colors.grey,
-        currentIndex: 2,
-        onTap: (index) {
-          if (index == 4) { // If the fourth item (index 4) is tapped
+       selectedItemColor: Colors.pink,
+unselectedItemColor: Colors.grey,
+currentIndex: 2, // Assuming the third item is initially selected
+onTap: (index) {
+  if (index == 3) { // Handle tap on the fourth item (index 3)
+    Navigator.of(context).pushNamed("/notifications");
+  } else if (index == 4) { // Handle tap on the fifth item (index 4)
     Navigator.of(context).pushNamed("/userprofile");
-          
-
-        }},
+  }else if (index == 1) { // Handle tap on the fifth item (index 4)
+    Navigator.of(context).pushNamed("/sos");
+  }else if (index == 0) { // Handle tap on the fifth item (index 4)
+    Navigator.of(context).pushNamed("/yourcircle");
+  }
+  
+},
   ),
     );
   }
