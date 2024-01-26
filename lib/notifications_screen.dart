@@ -28,7 +28,7 @@ class NotificationsScreen extends StatelessWidget {
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {
-                // Handle click for the first notification
+                Navigator.of(context).pushNamed("/checkin");
                 print('Clicked on Arwa notification');
               },
               child: NotificationItem(
