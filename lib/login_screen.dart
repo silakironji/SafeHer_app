@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
+
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -25,9 +27,12 @@ class _LoginScreenState extends State<LoginScreen> {
       color: Colors.white,
       child:  Column(
         children: [
-          const Text("SafeHer", style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, color: Colors.pinkAccent),),
+          Image.asset("assets/images/logo.png", 
+          width: 150,
+          height: 150,
+          ),
 
-          const Text("Login", style: TextStyle(fontSize: 40, color: Colors.pinkAccent),
+          const Text("Login", style: TextStyle(fontSize: 34, color: Colors.pinkAccent),
           ),
 
           Padding(
@@ -60,33 +65,57 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
 
-          const Text("Forgot Password?", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.pinkAccent),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Text("Forgot Password?", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.pinkAccent),
+            ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              child: const Text("New Here?", style: TextStyle(
+                fontSize:15, color: Color.fromARGB(255, 0, 0, 0) ),),
+                onTap: () {
+    Navigator.of(context).pushNamed("/register");
+  },
+            ),
+          ),
+          
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
-             const Text("New Here", style: TextStyle(fontSize:20, color: Colors.pinkAccent ),),
+             
 
-              ElevatedButton(
-              onPressed: () {
-              Navigator.of(context).pushNamed("/home");
-              },
-              child: Text('Login'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.pinkAccent,
-                foregroundColor: Colors.white,
-                fixedSize: Size(100, 50),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: ElevatedButton(
+                onPressed: () {
+                Navigator.of(context).pushNamed("/home");
+                },
+                child: Text('Login', 
+                style:const TextStyle(
+                fontSize: 20,
+                  
+                  )
+                  ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.pinkAccent,
+                  foregroundColor: Colors.white,
+                  fixedSize: const Size(150, 50),
+                  
+                  
+                ),
+                            ),
               ),
-            ),
             ],
           ),
 
           Row(
             
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end, mainAxisAlignment: MainAxisAlignment.center,
             children: [
             IconButton(
               icon: Icon(FontAwesomeIcons.google),

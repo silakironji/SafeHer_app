@@ -25,9 +25,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
       color: Colors.white,
       child:  Column(
         children: [
-          const Text("SafeHer", style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, color: Colors.pinkAccent),),
+          Image.asset("assets/images/logo.png", 
+          width: 150,
+          height: 150,
+          )
+          ,
 
-          const Text("Let's Register", style: TextStyle(fontSize: 40, color: Colors.pinkAccent),
+          const Text("Let's Register", style: TextStyle(fontSize: 34, color: Colors.pinkAccent),
           ),
 
           Padding(
@@ -83,7 +87,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: const Text("Already have an account?", style: TextStyle(fontSize: 15, color: Colors.pinkAccent),
+                child: const Text("Already have an account?",
+                 style: TextStyle(fontSize: 15, color: Colors.pinkAccent),
+                 
                           ),
               ),
             GestureDetector(
@@ -92,30 +98,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
   },
   child: Padding(
     padding: const EdgeInsets.all(8.0),
-    child: const Text("Login", style: TextStyle(fontSize: 18, color: Colors.black)),
+    child: const Text("Login", 
+    style: TextStyle(fontSize: 15, color: Colors.black)),
   ),
 ),
 
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 70),
-                child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("/home");
-                },
-                child: const Text('Register', style: TextStyle(fontSize: 20, ),),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pinkAccent,
-                  foregroundColor: Colors.white,
-                  fixedSize: const Size(150, 50),
+                padding: const EdgeInsets.symmetric(vertical: 40),
+                child: Row(mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("/home");
+                    },
+                    child: const Text('Register', style: TextStyle(fontSize: 20, ),),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.pinkAccent,
+                      foregroundColor: Colors.white,
+                      fixedSize: const Size(150, 50),
+                    ),
+                                ),
+                  ],
                 ),
-                            ),
               ),
             ],
           ),
 
           Row(
             
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,mainAxisAlignment: MainAxisAlignment.center,
             children: [
             IconButton(
               icon: Icon(FontAwesomeIcons.google),

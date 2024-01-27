@@ -25,9 +25,11 @@ class SplashScreen extends StatelessWidget {
                 // Add your action when the button is pressed
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.pink,
+                backgroundColor: Colors.pink,
+                
+                
               ),
-              child: Text(
+              child: const Text(
                 'Be SafeHer',
                 style: TextStyle(color: Colors.white),
               ),
