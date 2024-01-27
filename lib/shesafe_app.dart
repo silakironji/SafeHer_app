@@ -21,7 +21,7 @@ class SheSafeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'SafeHer',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -39,7 +39,7 @@ class SheSafeApp extends StatelessWidget {
         "/joincircle":(context) =>const JoinCircleScreen(),
         "/createcircle":(context) =>const CreateCircleScreen(),
         "/create2circle":(context) =>const Create2CircleScreen(),
-        "/soscount":(context) =>const SosCountScreen(),
+        "/soscount":(context) => SosCountScreen(),
         "/invitescreen":(context) =>const InviteScreen(),
         "/yourcircle":(context) =>const YourCircleScreen(),
         "/checkin":(context) =>CheckinScreen(),

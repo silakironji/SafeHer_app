@@ -9,7 +9,7 @@ class SosScreen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.of(context).pushNamed("/home");
           },
         ),
       ),
@@ -21,7 +21,7 @@ class SosScreen extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 // Add logic to handle SOS button tap
-                print('SOS button tapped');
+              Navigator.of(context).pushNamed("/soscount");
               },
               child: Container(
                 width: 250,
