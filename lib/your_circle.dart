@@ -88,11 +88,16 @@ class _YourCircleScreenState extends State<YourCircleScreen> {
           Container(
             padding: EdgeInsets.symmetric(vertical: 10),
             alignment: Alignment.center,
-            child: Text(
-              'Leave Circle',
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.black,
+            child: GestureDetector(
+              onTap: (){
+                 
+              },
+              child: Text(
+                'Leave Circle',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: const Color.fromARGB(255, 163, 63, 63),
+                ),
               ),
             ),
           ),
@@ -101,23 +106,50 @@ class _YourCircleScreenState extends State<YourCircleScreen> {
       // Bottom navigation bar with 5 icons
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.pink,
+        unselectedItemColor: Colors.grey,
+        currentIndex: 0, // Assuming the first item is initially selected
+         onTap: (index) {
+          if (index == 3) {
+            // Handle tap on the fourth item (index 3)
+            Navigator.of(context).pushNamed("/notifications");
+          } else if (index == 4) {
+            // Handle tap on the fifth item (index 4)
+            Navigator.of(context).pushNamed("/userprofile");
+          } else if (index == 1) {
+            // Handle tap on the fifth item (index 4)
+            Navigator.of(context).pushNamed("/sos");
+          } else if (index == 0) {
+            // Handle tap on the fifth item (index 4)
+            Navigator.of(context).pushNamed("/yourcircle");
+          }else if (index == 2) {
+            // Handle tap on the third item (index 2)
+            Navigator.of(context).pushNamed("/home");}
+        },
+
         items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.handshake_outlined, color: Colors.pink),
-              label: ""),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.sos, color: Colors.pink),
-            label: "",
+         BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: 'Community',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite, color: Colors.pink), label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.pink), label: ""),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Colors.pink),
-            label: '',
+            icon: Icon(Icons.sos),
+            label: 'SOS',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+          
         ],
+        
       ),
     ));
   }
