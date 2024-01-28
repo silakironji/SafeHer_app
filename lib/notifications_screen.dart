@@ -50,6 +50,47 @@ class NotificationsScreen extends StatelessWidget {
           ],
         ),
       ),
+      //Bottom Nav
+       bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: 'Community',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.sos),
+            label: 'SOS',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        selectedItemColor: Colors.pink,
+        unselectedItemColor: Colors.grey,
+        currentIndex: 3,
+        onTap: (index) {
+          if (index == 3) {
+            Navigator.of(context).pushNamed("/notifications");
+          } else if (index == 4) {
+            Navigator.of(context).pushNamed("/userprofile");
+          } else if (index == 1) {
+            Navigator.of(context).pushNamed("/sos");
+          } else if (index == 0) {
+            Navigator.of(context).pushNamed("/createcircle");
+          }else if (index == 2) {
+            Navigator.of(context).pushNamed("/home");
+            }
+        },
+      ),
     );
   }
 }

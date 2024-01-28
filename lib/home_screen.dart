@@ -3,8 +3,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:share/share.dart';
 
-
-
 class BottomSheetWidget extends StatelessWidget {
   final LatLng currentLocation;
 
@@ -25,9 +23,9 @@ class BottomSheetWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildAvatarButton('assets/images/cute.jpg', context),
-              _buildAvatarButton('assets/images/cute.jpg', context),
-              _buildAvatarButton('assets/images/cute.jpg', context),
+              _buildClickableAvatar('assets/images/cute.jpg', context),
+              _buildClickableAvatar('assets/images/cute.jpg', context),
+              _buildClickableAvatar('assets/images/cute.jpg', context),
             ],
           ),
         ],
@@ -35,28 +33,29 @@ class BottomSheetWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildAvatarButton(String imagePath, BuildContext context) {
+  Widget _buildClickableAvatar(String imagePath, BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _shareLocation(currentLocation);
-        Navigator.pop(context); // Close the bottom sheet after sharing
+        String locationString =
+            'Latitude: ${currentLocation.latitude}, Longitude: ${currentLocation.longitude}';
+        Share.share(locationString);
+        print('Avatar tapped');
       },
-      child: CircleAvatar(
-        backgroundImage: AssetImage(imagePath),
-        radius: 30,
-      ),
+      child: _buildAvatar(imagePath),
     );
   }
 
-  void _shareLocation(LatLng location) {
-    String locationString =
-        'Latitude: ${location.latitude}, Longitude: ${location.longitude}';
-    Share.share(locationString);
+  Widget _buildAvatar(String imagePath) {
+    return CircleAvatar(
+      backgroundImage: AssetImage(imagePath),
+      radius: 30,
+    );
   }
 }
 
-
 class SheSafeHomePage extends StatefulWidget {
+  const SheSafeHomePage({super.key});
+
   @override
   _SheSafeHomePageState createState() => _SheSafeHomePageState();
 }
@@ -84,15 +83,11 @@ class _SheSafeHomePageState extends State<SheSafeHomePage> {
     }
   }
 
-  // Function to share the current location
-void _shareCurrentLocation() {
-  // Format the location as a string
-  String locationString =
-      'Latitude: ${_currentLocation.latitude}, Longitude: ${_currentLocation.longitude}';
-
-  // Use the share package to send the location as a text message
-  Share.share(locationString);
-}
+  void _shareCurrentLocation() {
+    String locationString =
+        'Latitude: ${_currentLocation.latitude}, Longitude: ${_currentLocation.longitude}';
+    Share.share(locationString);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -118,13 +113,17 @@ void _shareCurrentLocation() {
           ),
         },
       ),
-      floatingActionButton: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           FloatingActionButton(
             onPressed: () {
               showModalBottomSheet(
                 context: context,
-                builder: (context) => BottomSheetWidget(currentLocation: LatLng(_currentLocation.latitude, _currentLocation.longitude),),
+                builder: (context) => BottomSheetWidget(
+                  currentLocation: LatLng(
+                      _currentLocation.latitude, _currentLocation.longitude),
+                ),
               );
             },
             backgroundColor: Colors.pink,
@@ -132,7 +131,6 @@ void _shareCurrentLocation() {
           ),
           FloatingActionButton(
             onPressed: () {
-              // Handle action to show current location
               _mapController?.animateCamera(
                 CameraUpdate.newLatLng(_currentLocation),
               );
@@ -140,11 +138,12 @@ void _shareCurrentLocation() {
             backgroundColor: Colors.pink,
             child: Icon(Icons.my_location, color: Colors.white),
           ),
-          
         ],
       ),
+
+      //Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.people),
             label: 'Community',
@@ -168,20 +167,16 @@ void _shareCurrentLocation() {
         ],
         selectedItemColor: Colors.pink,
         unselectedItemColor: Colors.grey,
-        currentIndex: 2, // Assuming the third item is initially selected
+        currentIndex: 2,
         onTap: (index) {
           if (index == 3) {
-            // Handle tap on the fourth item (index 3)
             Navigator.of(context).pushNamed("/notifications");
           } else if (index == 4) {
-            // Handle tap on the fifth item (index 4)
             Navigator.of(context).pushNamed("/userprofile");
           } else if (index == 1) {
-            // Handle tap on the fifth item (index 4)
             Navigator.of(context).pushNamed("/sos");
           } else if (index == 0) {
-            // Handle tap on the fifth item (index 4)
-            Navigator.of(context).pushNamed("/yourcircle");
+            Navigator.of(context).pushNamed("/createcircle");
           }
         },
       ),
