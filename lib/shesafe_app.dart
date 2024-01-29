@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shesafe/account.dart';
 import 'package:shesafe/checkedin_screen.dart';
 import 'package:shesafe/checkin_screen.dart';
 import 'package:shesafe/create2_circle.dart';
@@ -32,18 +33,20 @@ class SheSafeApp extends StatelessWidget {
         "/":(context) =>  SplashScreen(),
         "/register": (context) => const RegisterScreen(),
         "/login": (context) => const LoginScreen(),
-        "/home":(context) => SheSafeHomePage(),
+        "/home":(context) => const SheSafeHomePage(),
         "/userprofile":(context) => const UserProfileScreen(),
         "/notifications":(context) =>NotificationsScreen(),
         "/sos":(context) =>SosScreen(),
         "/joincircle":(context) =>const JoinCircleScreen(),
         "/createcircle":(context) =>const CreateCircleScreen(),
         "/create2circle":(context) =>const Create2CircleScreen(),
-        "/soscount":(context) => SosCountScreen(),
+        "/soscount":(context) => const SosCountScreen(),
         "/invitescreen":(context) =>const InviteScreen(),
         "/yourcircle":(context) =>const YourCircleScreen(),
         "/checkin":(context) =>CheckinScreen(),
         "/checkedin":(context) =>CheckedinScreen(),
+        "/account":(context) =>const Account(),
+
 
 
         

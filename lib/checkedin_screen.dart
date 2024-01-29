@@ -8,7 +8,7 @@ class CheckedinScreen extends StatefulWidget {
 class _CheckedinScreenState extends State<CheckedinScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Column(
         children: [
           GoogleMapWidget(),
@@ -23,6 +23,8 @@ class _CheckedinScreenState extends State<CheckedinScreen> {
 }
 
 class GoogleMapWidget extends StatelessWidget {
+  const GoogleMapWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Implement your Google Maps widget here
@@ -36,6 +38,8 @@ class GoogleMapWidget extends StatelessWidget {
 }
 
 class SearchBarWidget extends StatelessWidget {
+  const SearchBarWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -43,7 +47,7 @@ class SearchBarWidget extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: 'Search Location',
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: const Icon(Icons.search),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
           ),
@@ -54,10 +58,12 @@ class SearchBarWidget extends StatelessWidget {
 }
 
 class BottomSheetWidget extends StatelessWidget {
+  const BottomSheetWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -72,32 +78,32 @@ class BottomSheetWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Family (2)',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 8),
-          Text(
+          const SizedBox(height: 8),
+          const Text(
             'Subtitle: All time tracking',
             style: TextStyle(
               fontSize: 16,
               color: Colors.grey,
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Row(
             children: [
               IconButton(
-                icon: Icon(Icons.person),
+                icon: const Icon(Icons.person),
                 onPressed: () {
                   // Handle profile icon button press
                 },
               ),
-              SizedBox(width: 8),
-              Text(
+              const SizedBox(width: 8),
+              const Text(
                 'You',
                 style: TextStyle(
                   fontSize: 16,
@@ -105,8 +111,8 @@ class BottomSheetWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 16),
-          Text(
+          const SizedBox(height: 16),
+          const Text(
             'Location: Roysambu\nDate: 23 Jan 2024 6:03 PM',
             style: TextStyle(
               fontSize: 16,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class JoinCircleScreen extends StatefulWidget {
   const JoinCircleScreen({super.key});
 
@@ -10,111 +9,114 @@ class JoinCircleScreen extends StatefulWidget {
 
 class _JoinCircleScreenState extends State<JoinCircleScreen> {
 
-  int _currentIndex = 0;
-
   //final TextEditingController _textController = TextEditingController(text: 'Search items');
-  final List<Widget> _pages = [
 
-  ];
-
-  
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       home: Scaffold(
-            bottomNavigationBar: BottomNavigationBar(
-              backgroundColor: Colors.grey,
-              currentIndex: _currentIndex,
-              onTap: (index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-                   type: BottomNavigationBarType.fixed,
-                   showSelectedLabels: true,
-                   showUnselectedLabels: true,
-                   items: const [
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.front_hand_outlined, color: Colors.pinkAccent,),
-               label: 'community'
+              icon: Icon(Icons.people),
+              label: 'Community',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.sos, color: Colors.pinkAccent,),
-              label: 'SOS'
+              icon: Icon(Icons.sos),
+              label: 'SOS',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.pinkAccent,),
-              label: 'home'
+              icon: Icon(Icons.home),
+              label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.notifications, color: Colors.pinkAccent,),
-              label: 'notifications'
+              icon: Icon(Icons.notifications),
+              label: 'Notifications',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.pinkAccent,),
-              label: 'profile'
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
-                   ],
-                 ),
-    
-        
+          ],
+          selectedItemColor: Colors.pink,
+          unselectedItemColor: Colors.grey,
+          currentIndex: 0, // Assuming the third item is initially selected
+          onTap: (index) {
+            if (index == 3) {
+              // Handle tap on the fourth item (index 3)
+              Navigator.of(context).pushNamed("/notifications");
+            } else if (index == 4) {
+              // Handle tap on the fifth item (index 4)
+              Navigator.of(context).pushNamed("/account");
+            } else if (index == 1) {
+              // Handle tap on the fifth item (index 4)
+              Navigator.of(context).pushNamed("/sos");
+            } else if (index == 0) {
+              // Handle tap on the fifth item (index 4)
+              Navigator.of(context).pushNamed("/createcircle");
+            } else if (index == 2) {
+              Navigator.of(context).pushNamed("/home");
+            }
+          },
+        ),
         appBar: AppBar(
-        leading: IconButton(onPressed: () {}, 
-        icon: Icon(Icons.arrow_back),
+            leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed("/createcircle");
+          },
+          icon: const Icon(Icons.arrow_back),
         )),
         body: Center(
-      child: Container(
-        padding: EdgeInsets.all(10.0),   
-      color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-       const Text("JoinCircle Circle", style: TextStyle(fontSize: 50, color: Colors.pinkAccent),
-        textAlign:TextAlign.center),
-
-        TextField(
-          decoration: InputDecoration(
-            labelText:"",
-            constraints: const BoxConstraints(maxWidth: 300),
-                        filled: true,
-                        border: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.pinkAccent),
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                      ),
-                      fillColor: Colors.white.withAlpha(100),),
-        ),
-
-       const Text("Ask Circle creater for their code", style: TextStyle(fontSize: 18, color: Colors.pinkAccent)),
-
-        ElevatedButton(
-          onPressed: () {
-            // Handle button press
-          },
-          
-          child: SizedBox(
-            width: 80,
-            child: Text('Submit', 
-            style: TextStyle(fontSize: 18, 
-            color: Colors.white
-            ),
-            textAlign: TextAlign.center,
-            ),
-            ),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.pinkAccent, // Set background color
-            elevation: 4.0, // Set elevation for shadow
-            side: BorderSide.none, // Remove the border
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0), // Set border radius
+          child: Container(
+            padding: const EdgeInsets.all(10.0),
+            color: Colors.white,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text("Join Circle",
+                    style: TextStyle(fontSize: 34, color: Colors.pink),
+                    textAlign: TextAlign.center),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "",
+                    constraints: const BoxConstraints(maxWidth: 300),
+                    filled: true,
+                    border: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pinkAccent),
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                    ),
+                    fillColor: Colors.white.withAlpha(100),
+                  ),
+                ),
+                const Text("Ask Circle creater for their code",
+                    style: TextStyle(fontSize: 18, color: Colors.pinkAccent)),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed("/createcircle");
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.pink, // Set background color
+                    // Set elevation for shadow
+                    side: BorderSide.none, // Remove the border
+                    shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(16.0), // Set border radius
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: 80,
+                    child: Text(
+                      'Submit',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
-      ],),
-    ),
-        ),
-        ),
-    ); 
-    
+      ),
+    );
   }
 }

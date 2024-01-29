@@ -6,7 +6,7 @@ import 'package:share/share.dart';
 class BottomSheetWidget extends StatelessWidget {
   final LatLng currentLocation;
 
-  BottomSheetWidget({required this.currentLocation});
+  const BottomSheetWidget({required this.currentLocation});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +15,11 @@ class BottomSheetWidget extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
+          const Text(
             'Sly Has Just shared her current location...',
             style: TextStyle(color: Colors.pink, fontSize: 18),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -172,7 +172,7 @@ class _SheSafeHomePageState extends State<SheSafeHomePage> {
           if (index == 3) {
             Navigator.of(context).pushNamed("/notifications");
           } else if (index == 4) {
-            Navigator.of(context).pushNamed("/userprofile");
+            Navigator.of(context).pushNamed("/account");
           } else if (index == 1) {
             Navigator.of(context).pushNamed("/sos");
           } else if (index == 0) {

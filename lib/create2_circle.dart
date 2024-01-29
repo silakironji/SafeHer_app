@@ -7,7 +7,7 @@ class Create2CircleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios,
+        leading: const Icon(Icons.arrow_back_ios,
         color: Colors.pink),
       ),
       body: Container(
@@ -17,7 +17,7 @@ class Create2CircleScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
+              const Text(
                 "Create Circle",
                 style: TextStyle(
                   fontSize: 30,
@@ -26,12 +26,12 @@ class Create2CircleScreen extends StatelessWidget {
                   decoration: TextDecoration.none,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   "Name of circle",
                   style: TextStyle(
-                    fontSize: 10,
+                    fontSize: 18,
                     color: Colors.pink,
                     decoration: TextDecoration.none,
                   ),
@@ -44,9 +44,6 @@ class Create2CircleScreen extends StatelessWidget {
                     decoration: InputDecoration(// Change icon based on your need
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.16), 
-                      
-                        
-        
                       )
                      
                     ),
@@ -55,7 +52,7 @@ class Create2CircleScreen extends StatelessWidget {
               ),
               Column(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 300,
                     child: ElevatedButton(
                       style: ButtonStyle(
@@ -106,12 +103,12 @@ class Create2CircleScreen extends StatelessWidget {
         ],
         selectedItemColor: Colors.pink,
         unselectedItemColor: Colors.grey,
-        currentIndex: 2,
+        currentIndex: 0,
         onTap: (index) {
           if (index == 3) {
             Navigator.of(context).pushNamed("/notifications");
           } else if (index == 4) {
-            Navigator.of(context).pushNamed("/userprofile");
+            Navigator.of(context).pushNamed("/account");
           } else if (index == 1) {
             Navigator.of(context).pushNamed("/sos");
           } else if (index == 0) {

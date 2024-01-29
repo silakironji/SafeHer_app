@@ -81,7 +81,7 @@ class NotificationsScreen extends StatelessWidget {
           if (index == 3) {
             Navigator.of(context).pushNamed("/notifications");
           } else if (index == 4) {
-            Navigator.of(context).pushNamed("/userprofile");
+            Navigator.of(context).pushNamed("/account");
           } else if (index == 1) {
             Navigator.of(context).pushNamed("/sos");
           } else if (index == 0) {

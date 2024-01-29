@@ -7,10 +7,10 @@ class CreateCircleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               'Create Circle',
               style: TextStyle(
                 fontSize: 32,
@@ -23,7 +23,7 @@ class CreateCircleScreen extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -35,13 +35,13 @@ class CreateCircleScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).pushNamed("/create2circle");
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.add_circle_outline,
                         color: Colors.pink,
                         size: 25,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Family',
                       style: TextStyle(
                         fontSize: 20,
@@ -53,14 +53,16 @@ class CreateCircleScreen extends StatelessWidget {
                 Row(
                   children: [
                     IconButton(
-                      onPressed: () {},
-                      icon: Icon(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/create2circle");
+                      },
+                      icon: const Icon(
                         Icons.add_circle_outline,
                         color: Colors.pink,
                         size: 25,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Friends',
                       style: TextStyle(
                         fontSize: 20,
@@ -71,7 +73,7 @@ class CreateCircleScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
+            SizedBox(
               width: 300,
               child: ElevatedButton(
                 style: ButtonStyle(
@@ -79,7 +81,7 @@ class CreateCircleScreen extends StatelessWidget {
                       (states) => Colors.pink),
                 ),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed("/joincircle");
                 },
                 child: const Text(
                   'Join Circle',
@@ -90,7 +92,7 @@ class CreateCircleScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
+            const Text(
               'Leave Circle',
               style: TextStyle(
                 fontSize: 15,
@@ -100,8 +102,9 @@ class CreateCircleScreen extends StatelessWidget {
           ],
         ),
       ),
+      //Bottom Nav
 bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.people),
             label: 'Community',
@@ -125,14 +128,14 @@ bottomNavigationBar: BottomNavigationBar(
         ],
         selectedItemColor: Colors.pink,
         unselectedItemColor: Colors.grey,
-        currentIndex: 2, // Assuming the third item is initially selected
+        currentIndex: 0, // Assuming the third item is initially selected
         onTap: (index) {
           if (index == 3) {
             // Handle tap on the fourth item (index 3)
             Navigator.of(context).pushNamed("/notifications");
           } else if (index == 4) {
             // Handle tap on the fifth item (index 4)
-            Navigator.of(context).pushNamed("/userprofile");
+            Navigator.of(context).pushNamed("/account");
           } else if (index == 1) {
             // Handle tap on the fifth item (index 4)
             Navigator.of(context).pushNamed("/sos");

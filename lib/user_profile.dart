@@ -123,7 +123,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           
           child: SizedBox(
             width: double.infinity,
-            child: Text('Logout', style: TextStyle(fontSize: 25, color: Colors.pinkAccent, fontWeight: FontWeight.bold),
+            child: Text('Logout', style: TextStyle(fontSize: 20, color: Colors.pinkAccent, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,),
             ),
           style: TextButton.styleFrom(

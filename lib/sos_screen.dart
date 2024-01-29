@@ -102,7 +102,7 @@ class SosScreen extends StatelessWidget {
         ],
         selectedItemColor: Colors.pink,
         unselectedItemColor: Colors.grey,
-        currentIndex: 2,
+        currentIndex: 1,
         onTap: (index) {
           if (index == 3) {
             Navigator.of(context).pushNamed("/notifications");
