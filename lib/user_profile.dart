@@ -34,13 +34,13 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
               const Padding(
-                padding:  EdgeInsets.only(left: 50),
+                padding:  EdgeInsets.only(left: 100),
                 child: Row(
                   
                   crossAxisAlignment: CrossAxisAlignment.start,
                 
                   children: [
-                 Expanded (flex:1, child:Text('Edit Profile', style: TextStyle(fontSize: 18, color: Colors.pinkAccent,
+                 Expanded (flex:1, child:Text('Edit Profile', style: TextStyle(fontSize: 20, color: Colors.pinkAccent,
                  ),
                  )),
                  Spacer(),
@@ -84,7 +84,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                   child: TextField(
                           decoration: InputDecoration(
                                 labelText: "Email",
-                                constraints: BoxConstraints(maxWidth: 220.0),
+                                constraints: BoxConstraints(maxWidth: 620.0),
                                 filled: true,
                                 border: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.pinkAccent),
