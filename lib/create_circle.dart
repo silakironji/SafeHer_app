@@ -81,10 +81,10 @@ class CreateCircleScreen extends StatelessWidget {
                       (states) => Colors.pink),
                 ),
                 onPressed: () {
-                  Navigator.of(context).pushNamed("/joincircle");
+                  Navigator.of(context).pushNamed("/create2circle");
                 },
                 child: const Text(
-                  'Join Circle',
+                  'Create Circle',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,

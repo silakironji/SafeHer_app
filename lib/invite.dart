@@ -14,8 +14,8 @@ class InviteScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
-                "InviteScreen members to the Family circle",
+              const Text(
+                "Invite members to the Family circle",
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.pink,
@@ -35,13 +35,13 @@ class InviteScreen extends StatelessWidget {
                 child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateColor.resolveWith(
-                        (states) => Color.fromRGBO(255, 112, 167, 1)),
+                        (states) => Colors.pink),
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).pushNamed("/yourcircle");
                   },
                   child: const Text(
-                    'Join Circle',
+                    'Send Code',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
