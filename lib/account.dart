@@ -43,7 +43,7 @@ class _AccountState extends State<Account> {
                         borderSide: BorderSide(
                             color: Colors.pink), // Set border color to pink
                       ),
-                      hintText: 'Enter your name',
+                      hintText: 'User Name',
                       hintStyle: TextStyle(color: Colors.pink),
                     ),
                   ),
