@@ -6,7 +6,7 @@ class CheckinScreen extends StatefulWidget {
 }
 
 class _CheckinScreen extends State<CheckinScreen> {
-  TextEditingController _locationController = TextEditingController();
+  // TextEditingController _locationController = TextEditingController();
   TextEditingController _customNameController = TextEditingController();
 
   @override
@@ -18,7 +18,7 @@ class _CheckinScreen extends State<CheckinScreen> {
           GoogleMapWidget(),
 
           // 2. Back Button
-          Positioned(
+          const Positioned(
             top: 40,
             left: 16,
             child: BackButton(),
@@ -75,7 +75,7 @@ class BottomSheetWidget extends StatelessWidget {
   final String inputPlaceholder;
   final TextEditingController customNameController;
 
-  BottomSheetWidget({
+   BottomSheetWidget({
     required this.title,
     required this.inputPlaceholder,
     required this.customNameController,
@@ -84,8 +84,8 @@ class BottomSheetWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(16),
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
@@ -104,21 +104,21 @@ class BottomSheetWidget extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           TextField(
             controller: customNameController,
             decoration: InputDecoration(
               hintText: inputPlaceholder,
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
           Navigator.of(context).pushNamed("/checkedin");
             },
-            child: Text('Save'),
+            child: const Text('Save'),
           ),
         ],
       ),

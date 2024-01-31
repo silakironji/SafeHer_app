@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:shesafe/account.dart';
-import 'package:shesafe/checkedin_screen.dart';
-import 'package:shesafe/checkin_screen.dart';
-import 'package:shesafe/create2_circle.dart';
-import 'package:shesafe/create_circle.dart';
-import 'package:shesafe/home_screen.dart';
-import 'package:shesafe/invite.dart';
-import 'package:shesafe/join_circle.dart';
-import 'package:shesafe/login_screen.dart';
-import 'package:shesafe/notifications_screen.dart';
-import 'package:shesafe/register_screen.dart';
-import 'package:shesafe/sos_count.dart';
-import 'package:shesafe/sos_screen.dart';
-import 'package:shesafe/splashscreen.dart';
-import 'package:shesafe/user_profile.dart';
-import 'package:shesafe/your_circle.dart';
+import 'package:shesafe/MISCELLENIOUS-SCREEN-FILES/checkedin_screen.dart';
+import 'package:shesafe/screens/login_screen.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/account.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/checkin_screen.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/create2_circle.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/create_circle.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/invite.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/join_circle.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/notifications_screen.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/sos_count.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/sos_screen.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/user_profile.dart';
+import 'MISCELLENIOUS-SCREEN-FILES/your_circle.dart';
+import 'screens/home_screen.dart';
+import 'screens/register_screen.dart';
 
 class SheSafeApp extends StatelessWidget {
   const SheSafeApp({super.key});
@@ -30,8 +29,10 @@ class SheSafeApp extends StatelessWidget {
         //home:   SplashScreen(),
         initialRoute: "/",
         routes: <String, WidgetBuilder>{
-          "/": (context) => SplashScreen(),
-          "/register": (context) => const RegisterScreen(),
+
+          "/": (context) => RegisterScreen(),
+          // "/": (context) => SplashScreen(),
+          // "/register": (context) => const RegisterScreen(),
           "/login": (context) => const LoginScreen(),
           "/home": (context) => const SheSafeHomePage(),
           "/userprofile": (context) => const UserProfileScreen(),
