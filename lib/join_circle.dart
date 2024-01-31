@@ -92,7 +92,7 @@ class _JoinCircleScreenState extends State<JoinCircleScreen> {
                     style: TextStyle(fontSize: 18, color: Colors.pinkAccent)),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed("/createcircle");
+                    Navigator.of(context).pushNamed("/yourcircle");
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.pink, // Set background color

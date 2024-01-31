@@ -15,7 +15,7 @@ class InviteScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                "InviteScreen members to the Family circle",
+                "Invite members to the Family circle",
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.pink,
@@ -30,77 +30,68 @@ class InviteScreen extends StatelessWidget {
                   decoration: TextDecoration.none,
                 ),
               ),
-              Container(
-                width: 300,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateColor.resolveWith(
-                        (states) => Color.fromRGBO(255, 112, 167, 1)),
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text(
-                    'Join Circle',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
+              // Container(
+              //   width: 300,
+              //   child: ElevatedButton(
+              //     style: ButtonStyle(
+              //       backgroundColor: MaterialStateColor.resolveWith(
+              //           (states) => Colors.pink),
+              //     ),
+              //     onPressed: () {
+                    
+              //     },
+              //     child: const Text(
+              //       'Join Circle',
+              //       style: TextStyle(
+              //         fontSize: 20,
+              //         color: Colors.white,
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        child: ButtonBar(
-          alignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.front_hand_outlined,
-                color: Colors.pink[300],
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                
-              },
-              icon: Icon(
-                Icons.sos_rounded,
-                color: Colors.pink[300],
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.home,
-                color: Colors.pink[300],
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.notifications,
-                color: Colors.pink[300],
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const InviteScreen()),
-                );
-              },
-              icon: Icon(
-                Icons.person,
-                color: Colors.pink[300],
-              ),
-            ),
-          ],
-        ),
+       bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: 'Community',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.sos),
+            label: 'SOS',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        selectedItemColor: Colors.pink,
+        unselectedItemColor: Colors.grey,
+        currentIndex: 0,
+        onTap: (index) {
+          if (index == 3) {
+            Navigator.of(context).pushNamed("/notifications");
+          } else if (index == 4) {
+            Navigator.of(context).pushNamed("/account");
+          } else if (index == 1) {
+            Navigator.of(context).pushNamed("/sos");
+          } else if (index == 0) {
+            Navigator.of(context).pushNamed("/createcircle");
+          }else if (index == 2) {
+            Navigator.of(context).pushNamed("/home");
+            }
+        },
       ),
     );
   }

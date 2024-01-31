@@ -29,7 +29,7 @@ class Create2CircleScreen extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  "Name of circle",
+                  "Invite Members of Circles",
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.pink,
@@ -44,7 +44,8 @@ class Create2CircleScreen extends StatelessWidget {
                     decoration: InputDecoration(// Change icon based on your need
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16.16), 
-                      )
+                      ),
+                      hintText: 'Phone Number',
                      
                     ),
                   ),
@@ -60,10 +61,10 @@ class Create2CircleScreen extends StatelessWidget {
                             (states) => Colors.pink),
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
+                        Navigator.of(context).pushNamed("/invitescreen");
                       },
                       child: const Text(
-                        'Join Circle',
+                        'Send Invite',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.white,

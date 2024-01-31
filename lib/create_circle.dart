@@ -81,6 +81,25 @@ class CreateCircleScreen extends StatelessWidget {
                       (states) => Colors.pink),
                 ),
                 onPressed: () {
+                  Navigator.of(context).pushNamed("/create2circle");
+                },
+                child: const Text(
+                  'Create Circle',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                
+              ),
+              
+            ),
+ ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateColor.resolveWith(
+                      (states) => Colors.pink),
+                ),
+                onPressed: () {
                   Navigator.of(context).pushNamed("/joincircle");
                 },
                 child: const Text(
@@ -90,15 +109,15 @@ class CreateCircleScreen extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                
               ),
-            ),
-            const Text(
-              'Leave Circle',
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.pink,
-              ),
-            ),
+            // const Text(
+            //   'Leave Circle',
+            //   style: TextStyle(
+            //     fontSize: 15,
+            //     color: Colors.pink,
+            //   ),
+            // ),
           ],
         ),
       ),
