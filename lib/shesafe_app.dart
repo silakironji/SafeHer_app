@@ -22,36 +22,30 @@ class SheSafeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SafeHer',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      //home:   SplashScreen(),
-      initialRoute: "/",
-      routes: <String, WidgetBuilder> {
-        "/":(context) =>  SplashScreen(),
-        "/register": (context) => const RegisterScreen(),
-        "/login": (context) => const LoginScreen(),
-        "/home":(context) => const SheSafeHomePage(),
-        "/userprofile":(context) => const UserProfileScreen(),
-        "/notifications":(context) =>NotificationsScreen(),
-        "/sos":(context) =>SosScreen(),
-        "/joincircle":(context) =>const JoinCircleScreen(),
-        "/createcircle":(context) =>const CreateCircleScreen(),
-        "/create2circle":(context) =>const Create2CircleScreen(),
-        "/soscount":(context) => const SosCountScreen(),
-        "/invitescreen":(context) =>const InviteScreen(),
-        "/yourcircle":(context) =>const YourCircleScreen(),
-        "/checkin":(context) =>CheckinScreen(),
-        "/checkedin":(context) =>CheckedinScreen(),
-        "/account":(context) =>const Account(),
-
-
-
-        
-      }
-    );
-    
+        title: 'SafeHer',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        //home:   SplashScreen(),
+        initialRoute: "/",
+        routes: <String, WidgetBuilder>{
+          "/": (context) => SplashScreen(),
+          "/register": (context) => const RegisterScreen(),
+          "/login": (context) => const LoginScreen(),
+          "/home": (context) => const SheSafeHomePage(),
+          "/userprofile": (context) => const UserProfileScreen(),
+          "/notifications": (context) => NotificationsScreen(),
+          "/sos": (context) => SosScreen(),
+          "/joincircle": (context) => const JoinCircleScreen(),
+          "/createcircle": (context) => const CreateCircleScreen(),
+          "/create2circle": (context) => const Create2CircleScreen(),
+          "/soscount": (context) => const SosCountScreen(),
+          "/invitescreen": (context) => const InviteScreen(),
+          "/yourcircle": (context) => const YourCircleScreen(),
+          "/checkin": (context) => CheckinScreen(),
+          "/checkedin": (context) => CheckedinScreen(),
+          "/account": (context) => const Account(),
+        });
   }
 }

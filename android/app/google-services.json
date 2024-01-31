@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "521908701882",
+    "project_id": "safehermobile-5d7b1",
+    "storage_bucket": "safehermobile-5d7b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521908701882:android:152f7c23a3c12a65aa1083",
+        "android_client_info": {
+          "package_name": "com.example.shesafe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsDeqrmsc4_Amspxq5TCNWahUyIMCX5Fw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
