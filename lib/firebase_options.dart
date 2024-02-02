@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -49,20 +46,33 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAcJcpG_7ofSFmxpVpN4VRP0_B09FwQSbc',
+    appId: '1:604124824461:web:5791c7bdbe22ea5d4e73c4',
+    messagingSenderId: '604124824461',
+    projectId: 'safeher-2f759',
+    authDomain: 'safeher-2f759.firebaseapp.com',
+    databaseURL: 'https://safeher-2f759-default-rtdb.firebaseio.com',
+    storageBucket: 'safeher-2f759.appspot.com',
+    measurementId: 'G-9QHWT05SWS',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCsDeqrmsc4_Amspxq5TCNWahUyIMCX5Fw',
-    appId: '1:521908701882:android:152f7c23a3c12a65aa1083',
-    messagingSenderId: '521908701882',
-    projectId: 'safehermobile-5d7b1',
-    storageBucket: 'safehermobile-5d7b1.appspot.com',
+    apiKey: 'AIzaSyCN7X69xhCB_Sknn5R9bD-aRw-n8a8tOS0',
+    appId: '1:604124824461:android:ebb160b2a83595224e73c4',
+    messagingSenderId: '604124824461',
+    projectId: 'safeher-2f759',
+    databaseURL: 'https://safeher-2f759-default-rtdb.firebaseio.com',
+    storageBucket: 'safeher-2f759.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB_AxsY2ubXugubXuejVOFnOjO145PjokI',
-    appId: '1:521908701882:ios:e0ca8604aea2a9dbaa1083',
-    messagingSenderId: '521908701882',
-    projectId: 'safehermobile-5d7b1',
-    storageBucket: 'safehermobile-5d7b1.appspot.com',
-    iosBundleId: 'com.example.shesafe',
+    apiKey: 'AIzaSyB2Uc69ZcNKt6gQRvmsh6JA5bFY0twSFQ0',
+    appId: '1:604124824461:ios:c6fc274cf4097a974e73c4',
+    messagingSenderId: '604124824461',
+    projectId: 'safeher-2f759',
+    databaseURL: 'https://safeher-2f759-default-rtdb.firebaseio.com',
+    storageBucket: 'safeher-2f759.appspot.com',
+    iosBundleId: 'com.example.mvp',
   );
 }

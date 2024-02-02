@@ -1,24 +1,25 @@
 // lib/utils/validators.dart
-class Validators {
+
+class FormValidations {
   static String? validateEmail(String? value) {
-    if (value == null || value.isEmpty || !value.contains('@')) {
-      return 'Enter a valid email address';
+    if (value == null || value.isEmpty) {
+      return 'Please enter your email';
+    }
+    return null;
+  }
+
+  static String? validateName(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your name';
     }
     return null;
   }
 
   static String? validatePassword(String? value) {
-    //password validation logic needed?
-    return null;
-  }
-
-  static String? validatePhoneNumber(String? value) {
-    // umber validation logic
-    return null;
-  }
-
-  static String? validateNationalId(String? value) {
-    // national ID validation logic
+    if (value == null || value.isEmpty) {
+      return 'Please enter your password';
+    }
+    // You can add more complex password validation logic if needed
     return null;
   }
 }

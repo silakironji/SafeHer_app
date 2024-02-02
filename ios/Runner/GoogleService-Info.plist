@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyB_AxsY2ubXugubXuejVOFnOjO145PjokI</string>
+	<string>AIzaSyB2Uc69ZcNKt6gQRvmsh6JA5bFY0twSFQ0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>521908701882</string>
+	<string>604124824461</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.shesafe</string>
+	<string>com.example.mvp</string>
 	<key>PROJECT_ID</key>
-	<string>safehermobile-5d7b1</string>
+	<string>safeher-2f759</string>
 	<key>STORAGE_BUCKET</key>
-	<string>safehermobile-5d7b1.appspot.com</string>
+	<string>safeher-2f759.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:521908701882:ios:e0ca8604aea2a9dbaa1083</string>
+	<string>1:604124824461:ios:c6fc274cf4097a974e73c4</string>
+	<key>DATABASE_URL</key>
+	<string>https://safeher-2f759-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
