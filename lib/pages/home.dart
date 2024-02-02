@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:share/share.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class BottomSheetWidget extends StatelessWidget {
   final LatLng currentLocation;
@@ -67,7 +68,16 @@ class _SheSafeHomePageState extends State<SheSafeHomePage> {
   @override
   void initState() {
     super.initState();
-    _getCurrentLocation();
+    _requestLocationPermission(); // Call this to request location permission
+  }
+
+  Future<void> _requestLocationPermission() async {
+    var status = await Permission.location.request();
+    if (status == PermissionStatus.granted) {
+      _getCurrentLocation();
+    } else {
+      print("Location permission denied");
+    }
   }
 
   Future<void> _getCurrentLocation() async {
@@ -140,8 +150,6 @@ class _SheSafeHomePageState extends State<SheSafeHomePage> {
           ),
         ],
       ),
-
-      //Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(

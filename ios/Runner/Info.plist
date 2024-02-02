@@ -45,5 +45,114 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSLocationUsageDescription</key>
+<string>We need your location for...</string>
+
+<key>NSPhotoLibraryUsageDescription</key>
+<string>We need access to your photo library for...</string>
+
 </dict>
 </plist>
